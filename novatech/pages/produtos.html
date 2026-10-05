@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produtos | NovaTech Store</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-nt py-3">
+      <div class="container">
+        <a class="navbar-brand logo-texto fs-4" href="../index.html">Nova<span>Tech</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+            <li class="nav-item"><a class="nav-link" href="../index.html">Início</a></li>
+            <li class="nav-item"><a class="nav-link active" href="produtos.html">Produtos</a></li>
+            <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
+            <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+            <li class="nav-item">
+              <a class="nav-link carrinho-icone" href="carrinho.html">
+                <i class="bi bi-cart3 fs-5"></i>
+                <span class="carrinho-badge" id="carrinho-contador">0</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="secao">
+    <div class="container">
+      <div class="secao-titulo">
+        <h1 class="h2">Nosso catálogo</h1>
+        <p>Encontre o produto ideal para você</p>
+      </div>
+
+      <!-- Filtros -->
+      <div class="filtros-categoria text-center mb-5" id="filtros">
+        <button class="btn btn-outline-primary ativo" data-filtro="todos">Todos</button>
+        <button class="btn btn-outline-primary" data-filtro="notebooks">Notebooks</button>
+        <button class="btn btn-outline-primary" data-filtro="smartphones">Smartphones</button>
+        <button class="btn btn-outline-primary" data-filtro="audio">Áudio</button>
+        <button class="btn btn-outline-primary" data-filtro="acessorios">Acessórios</button>
+      </div>
+
+      <div class="row g-4" id="lista-produtos">
+
+        <div class="col-sm-6 col-lg-4 item-produto" data-categoria="notebooks">
+          <div class="card-produto p-3" data-id="1" data-nome="Notebook NovaBook Pro 14&quot;" data-preco="4299">
+            <div class="produto-imagem mb-3"><i class="bi bi-laptop"></i></div>
+            <span class="badge badge-categoria mb-2">Notebooks</span>
+            <h5>Notebook NovaBook Pro 14"</h5>
+            <p class="text-muted small mb-2">Intel i7, 16GB RAM, SSD 512GB, tela Full HD.</p>
+            <p class="mb-3"><span class="preco">R$ 4.299,00</span></p>
+            <button class="btn btn-adicionar w-100">Adicionar ao carrinho</button>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 item-produto" data-categoria="notebooks">
+          <div class="card-produto p-3" data-id="2" data-nome="Notebook NovaBook Lite 15&quot;" data-preco="2799">
+            <div class="produto-imagem mb-3"><i class="bi bi-laptop"></i></div>
+            <span class="badge badge-categoria mb-2">Notebooks</span>
+            <h5>Notebook NovaBook Lite 15"</h5>
+            <p class="text-muted small mb-2">Intel i5, 8GB RAM, SSD 256GB, ideal para estudos.</p>
+            <p class="mb-3"><span class="preco">R$ 2.799,00</span></p>
+            <button class="btn btn-adicionar w-100">Adicionar ao carrinho</button>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 item-produto" data-categoria="smartphones">
+          <div class="card-produto p-3" data-id="3" data-nome="Smartphone Nova X20" data-preco="2199">
+            <div class="produto-imagem mb-3"><i class="bi bi-phone"></i></div>
+            <span class="badge badge-categoria mb-2">Smartphones</span>
+            <h5>Smartphone Nova X20</h5>
+            <p class="text-muted small mb-2">Tela AMOLED 6.5", 128GB, câmera tripla 108MP.</p>
+            <p class="mb-3"><span class="preco">R$ 2.199,00</span></p>
+            <button class="btn btn-adicionar w-100">Adicionar ao carrinho</button>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 item-produto" data-categoria="smartphones">
+          <div class="card-produto p-3" data-id="4" data-nome="Smartphone Nova Go" data-preco="1199">
+            <div class="produto-imagem mb-3"><i class="bi bi-phone"></i></div>
+            <span class="badge badge-categoria mb-2">Smartphones</span>
+            <h5>Smartphone Nova Go</h5>
+            <p class="text-muted small mb-2">Tela 6.1", 64GB, bateria de longa duração.</p>
+            <p class="mb-3">
+              <span class="preco-antigo">R$ 1.399,00</span>
+              <span class="preco">R$ 1.199,00</span>
+            </p>
+            <button class="btn btn-adicionar w-100">Adicionar ao carrinho</button>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 item-produto" data-categoria="audio">
+          <div class="card-produto p-3" data-id="5" data-nome="Headset NovaSound Air" data-preco="349">
+            <div class="produto-imagem mb-3"><i class="bi bi-headphones"></i></div>
+            <span class="badge badge-categoria mb-2">Áudio</span>
+            <h5>Headset NovaSound Air</h5>
+            <p class="text-muted small mb-2">Bluetooth 5.3, cancelamento de ruído ativo.</p>
+            <p class="mb-3"><span class="preco">R$ 349,00</span></p>
+            <button class="btn btn-adicionar w-100">Adicionar ao carrinho</button>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 item-produto" data-categoria="audio">
+          <div class="card-produto p-3" data-id="6" data-nome="Caixa de Som Nova Beat" data-preco="279">
+            <div class="produto-imagem mb-3"><i class="bi bi-speaker"></i></div>
+            <span class="badge badge-categoria mb-2">Áudio</span>
+            <h5>Caixa de Som Nova Beat</h5>
+            <p class="text-muted small mb-2">À prova d'água, 12h de bateria, som estéreo.</p>
+            <p class="mb-3"><span class="preco">R$ 279,00</span></p>
+            <button class="btn btn-adicionar w-100">Adicionar ao carrinho</button>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 item-produto" data-categoria="acessorios">
+          <div class="card-produto p-3" data-id="7" data-nome="Smartwatch Nova Fit 2" data-preco="599">
+            <div class="produto-imagem mb-3"><i class="bi bi-smartwatch"></i></div>
+            <span class="badge badge-categoria mb-2">Acessórios</span>
+            <h5>Smartwatch Nova Fit 2</h5>
+            <p class="text-muted small mb-2">Monitor cardíaco, GPS integrado, resistente à água.</p>
+            <p class="mb-3"><span class="preco">R$ 599,00</span></p>
+            <button class="btn btn-adicionar w-100">Adicionar ao carrinho</button>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 item-produto" data-categoria="acessorios">
+          <div class="card-produto p-3" data-id="8" data-nome="Mouse Nova Precision" data-preco="129">
+            <div class="produto-imagem mb-3"><i class="bi bi-mouse2"></i></div>
+            <span class="badge badge-categoria mb-2">Acessórios</span>
+            <h5>Mouse Nova Precision</h5>
+            <p class="text-muted small mb-2">Sensor óptico 16000 DPI, sem fio, ergonômico.</p>
+            <p class="mb-3"><span class="preco">R$ 129,00</span></p>
+            <button class="btn btn-adicionar w-100">Adicionar ao carrinho</button>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 item-produto" data-categoria="acessorios">
+          <div class="card-produto p-3" data-id="9" data-nome="Teclado Mecânico Nova Type" data-preco="349">
+            <div class="produto-imagem mb-3"><i class="bi bi-keyboard"></i></div>
+            <span class="badge badge-categoria mb-2">Acessórios</span>
+            <h5>Teclado Mecânico Nova Type</h5>
+            <p class="text-muted small mb-2">Switches azuis, RGB, ABNT2, sem fio.</p>
+            <p class="mb-3"><span class="preco">R$ 349,00</span></p>
+            <button class="btn btn-adicionar w-100">Adicionar ao carrinho</button>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="text-center text-muted mt-5 d-none" id="msg-vazio">Nenhum produto encontrado para esta categoria.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p class="text-center mb-0 small">&copy; 2026 NovaTech Store — Projeto acadêmico fictício, sem fins comerciais.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="../js/carrinho.js"></script>
+  <script src="../js/script.js"></script>
+</body>
+</html>

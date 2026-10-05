@@ -1,0 +1,330 @@
+/* =========================================================
+   NovaTech Store — style.css
+   Folha de estilos própria (complementa o Bootstrap)
+   ========================================================= */
+
+:root {
+  --cor-primaria: #1b3a6b;
+  --cor-primaria-clara: #2f5aa3;
+  --cor-destaque: #ff7a29;
+  --cor-destaque-escuro: #e05f10;
+  --cor-fundo: #f5f7fa;
+  --cor-texto: #1e2430;
+  --cor-texto-suave: #5b6472;
+  --cor-branco: #ffffff;
+  --sombra: 0 4px 16px rgba(15, 25, 45, 0.08);
+  --radius: 14px;
+  --fonte-titulo: 'Poppins', 'Segoe UI', sans-serif;
+  --fonte-texto: 'Inter', 'Segoe UI', sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: var(--fonte-texto);
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+  margin: 0;
+  padding-top: 76px; /* espaço para navbar fixa */
+}
+
+h1, h2, h3, h4, .navbar-brand, .logo-texto {
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+}
+
+a { text-decoration: none; }
+
+/* ---------- NAVBAR ---------- */
+.navbar-nt {
+  background-color: var(--cor-branco);
+  box-shadow: var(--sombra);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar-nt .nav-link {
+  color: var(--cor-texto) !important;
+  font-weight: 500;
+  margin: 0 6px;
+  position: relative;
+}
+
+.navbar-nt .nav-link.active,
+.navbar-nt .nav-link:hover {
+  color: var(--cor-destaque) !important;
+}
+
+.logo-texto span { color: var(--cor-destaque); }
+
+.carrinho-icone {
+  position: relative;
+}
+
+.carrinho-badge {
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  background: var(--cor-destaque);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: 50%;
+  padding: 2px 6px;
+  min-width: 20px;
+  text-align: center;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  background: linear-gradient(120deg, var(--cor-primaria) 0%, var(--cor-primaria-clara) 100%);
+  color: #fff;
+  padding: 90px 0;
+}
+
+.hero h1 { font-size: 2.6rem; }
+
+.hero .btn-destaque {
+  background-color: var(--cor-destaque);
+  border: none;
+  color: #fff;
+  padding: 12px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: background-color .2s ease, transform .2s ease;
+}
+
+.hero .btn-destaque:hover {
+  background-color: var(--cor-destaque-escuro);
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+/* ---------- SEÇÕES GERAIS ---------- */
+.secao { padding: 70px 0; }
+.secao-titulo {
+  text-align: center;
+  margin-bottom: 45px;
+}
+.secao-titulo p { color: var(--cor-texto-suave); }
+
+.bg-clara { background-color: var(--cor-branco); }
+
+/* ---------- CARDS DE PRODUTO ---------- */
+.card-produto {
+  border: none;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  transition: transform .25s ease, box-shadow .25s ease;
+  height: 100%;
+  background: var(--cor-branco);
+}
+
+.card-produto:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 26px rgba(15, 25, 45, 0.14);
+}
+
+.card-produto .produto-imagem {
+  height: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eef1f6;
+  font-size: 3.2rem;
+}
+
+.card-produto .badge-categoria {
+  background-color: var(--cor-primaria);
+  font-weight: 500;
+}
+
+.card-produto .preco {
+  color: var(--cor-destaque-escuro);
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.card-produto .preco-antigo {
+  text-decoration: line-through;
+  color: var(--cor-texto-suave);
+  font-size: .9rem;
+  margin-right: 6px;
+}
+
+.btn-adicionar {
+  background-color: var(--cor-primaria);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color .2s ease;
+}
+
+.btn-adicionar:hover { background-color: var(--cor-primaria-clara); color: #fff; }
+
+/* ---------- FILTROS (catálogo) ---------- */
+.filtros-categoria .btn {
+  border-radius: 50px;
+  margin: 4px;
+  font-weight: 500;
+}
+
+.filtros-categoria .btn.ativo,
+.filtros-categoria .btn:focus {
+  background-color: var(--cor-destaque);
+  color: #fff;
+  border-color: var(--cor-destaque);
+}
+
+/* ---------- CARRINHO ---------- */
+.item-carrinho {
+  background: var(--cor-branco);
+  border-radius: var(--radius);
+  box-shadow: var(--sombra);
+  padding: 18px;
+  margin-bottom: 16px;
+}
+
+.item-carrinho .miniatura {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  background: #eef1f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+}
+
+.resumo-carrinho {
+  background: var(--cor-branco);
+  border-radius: var(--radius);
+  box-shadow: var(--sombra);
+  padding: 24px;
+  position: sticky;
+  top: 100px;
+}
+
+/* ---------- FORMULÁRIO DE CONTATO ---------- */
+.form-contato {
+  background: var(--cor-branco);
+  border-radius: var(--radius);
+  box-shadow: var(--sombra);
+  padding: 40px;
+}
+
+.form-contato .form-label { font-weight: 600; }
+
+.form-contato .form-control:focus,
+.form-contato .form-select:focus {
+  border-color: var(--cor-destaque);
+  box-shadow: 0 0 0 0.2rem rgba(255, 122, 41, .18);
+}
+
+.mensagem-feedback {
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-weight: 500;
+  display: none;
+}
+
+.mensagem-feedback.sucesso {
+  background-color: #e5f7ec;
+  color: #1c7c40;
+  display: block;
+}
+
+.mensagem-feedback.erro {
+  background-color: #fdeaea;
+  color: #c3312f;
+  display: block;
+}
+
+.campo-invalido { border-color: #c3312f !important; }
+.texto-erro { color: #c3312f; font-size: .85rem; margin-top: 4px; display: none; }
+
+/* ---------- CARD "SOBRE" / VALORES ---------- */
+.card-valor {
+  text-align: center;
+  padding: 30px 20px;
+  border-radius: var(--radius);
+  background: var(--cor-branco);
+  box-shadow: var(--sombra);
+  height: 100%;
+}
+
+.card-valor .icone {
+  font-size: 2.4rem;
+  margin-bottom: 14px;
+}
+
+/* ---------- TIMELINE (sobre.html) ---------- */
+.timeline-item {
+  border-left: 3px solid var(--cor-destaque);
+  padding-left: 20px;
+  margin-bottom: 26px;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--cor-destaque);
+  position: absolute;
+  left: -8px;
+  top: 4px;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background-color: #101a2c;
+  color: #c7ced9;
+  padding: 50px 0 20px;
+}
+
+footer h5 { color: #fff; }
+footer a { color: #c7ced9; }
+footer a:hover { color: var(--cor-destaque); }
+footer hr { border-color: #29334a; }
+
+/* ---------- CARROSSEL SWIPER (home) ---------- */
+.swiper-destaques {
+  padding-bottom: 40px;
+}
+.swiper-destaques .swiper-pagination-bullet-active {
+  background: var(--cor-destaque);
+}
+
+/* ---------- UTILIDADES / ANIMAÇÕES ---------- */
+.toast-carrinho {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--cor-primaria);
+  color: #fff;
+  padding: 14px 22px;
+  border-radius: 10px;
+  box-shadow: var(--sombra);
+  z-index: 2000;
+  display: none;
+}
+
+/* ---------- RESPONSIVIDADE ---------- */
+@media (max-width: 991px) {
+  .hero { padding: 60px 0; text-align: center; }
+  .hero h1 { font-size: 2.1rem; }
+  .resumo-carrinho { position: static; margin-top: 20px; }
+}
+
+@media (max-width: 576px) {
+  body { padding-top: 66px; }
+  .secao { padding: 45px 0; }
+  .form-contato { padding: 24px; }
+  .hero h1 { font-size: 1.7rem; }
+}
